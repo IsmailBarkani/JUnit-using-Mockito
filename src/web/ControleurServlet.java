@@ -1,4 +1,4 @@
-package web.controleur;
+package web;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -14,6 +14,7 @@ public class ControleurServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.getRequestDispatcher("test.jsp").forward(req,resp);
 
     }
 
