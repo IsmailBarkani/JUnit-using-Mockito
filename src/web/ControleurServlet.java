@@ -1,5 +1,8 @@
 package web;
 
+import metier.impl.CreditMetierImpl;
+import metier.interf.ICreditMetier;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -9,9 +12,10 @@ import java.io.IOException;
 
 @WebServlet(name="cs",urlPatterns={"*.ism","/ismail"})
 public class ControleurServlet extends HttpServlet {
+    ICreditMetier service;
     @Override
     public void init() throws ServletException {
-
+        service = new CreditMetierImpl();
     }
 
     @Override
@@ -22,6 +26,11 @@ public class ControleurServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        double montant  = Double.parseDouble(req.getParameter("montant"));
+        int duree = Integer.parseInt(req.getParameter("duree"));
+        double taux = Double.parseDouble(req.getParameter("taux"));
+
+        double result = service.calculerMentialiteCredit(montant,taux,duree);
 
     }
 }

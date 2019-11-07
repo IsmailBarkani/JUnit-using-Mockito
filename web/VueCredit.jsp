@@ -18,6 +18,19 @@
                 <td><input type="text" placeholder="montant" name="montant"></td>
                 <td> DH</td>
             </tr>
+            <tr>
+                <td>Taux:</td>
+                <td><input type="text" placeholder="taux" name="taux"></td>
+                <td> %</td>
+            </tr>
+            <tr>
+                <td>Durre:</td>
+                <td><input type="text" placeholder="duree" name="duree"></td>
+                <td> mois</td>
+            </tr>
+            <tr>
+                <button type="submit">Calculer</button>
+            </tr>
         </table>
     </form>
 </body>
