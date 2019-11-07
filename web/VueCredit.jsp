@@ -8,9 +8,17 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Banque</title>
 </head>
 <body>
-defre
+    <form action="controleur.ism" method="post">
+        <table>
+            <tr>
+                <td>Mantant:</td>
+                <td><input type="text" placeholder="montant" name="montant"></td>
+                <td> DH</td>
+            </tr>
+        </table>
+    </form>
 </body>
 </html>
