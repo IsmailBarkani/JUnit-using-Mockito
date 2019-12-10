@@ -20,7 +20,7 @@ public class ControleurServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-       // req.setAttribute("model",new CreditModel());
+       req.setAttribute("model",new CreditModel());
         req.getRequestDispatcher("VueCredit.jsp").forward(req,resp);
 
     }
@@ -31,9 +31,8 @@ public class ControleurServlet extends HttpServlet {
         int duree = Integer.parseInt(req.getParameter("duree"));
         double taux = Double.parseDouble(req.getParameter("taux"));
 
-        double result = service.calculerMentialiteCredit(montant,taux,duree);
+        double result = 200.5;
         CreditModel model = new CreditModel(montant,taux,duree,result);
-
         req.setAttribute("model",model);
         req.getRequestDispatcher("VueRes.jsp").forward(req,resp);
 
